@@ -73,12 +73,14 @@ body {
     position: absolute;
     top: -50px;
     left: 10px;
-    animation-name: mario;
+    /* animation-name: mario;
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    animation-delay: -0.5s;
+    animation-delay: -0.5s; */
+    /* mario 4s ease-out -0.5s infinite forwards, */
+    animation: wheelingMario 6s linear infinite forwards;
 }
 
 .mario2 {
@@ -151,15 +153,6 @@ body {
     }
 }
 
-@keyframes mario {
-    from {
-        transform: translateX(-100vw);
-    }
-
-    to {
-        transform: translateX(100vw);
-    }
-}
 
 
 @keyframes luigi {
@@ -181,6 +174,45 @@ body {
         transform: scale(1, 0.6) translate(-110vw);
     }
 }
+
+@keyframes mario {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes wheelingMario {
+    0% {
+        transform: translateX(-100vw) rotateZ(0deg);
+    }
+
+
+    40% {
+        transform: translateX(40vw) rotateZ(0deg);
+    }
+
+
+    50% {
+        transform: translateX(50vw) rotateZ(-36deg);
+    }
+
+    60% {
+        transform: translateX(60vw) rotateZ(0deg);
+    }
+
+
+    100% {
+        transform: translateX(100vw) rotateZ(0deg);
+    }
+
+}
+
+
+
 
 
 /*// KEYFRAMES //*/
