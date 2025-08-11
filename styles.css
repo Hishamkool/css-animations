@@ -1,0 +1,173 @@
+/*// BASE STYLES //*/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+
+}
+
+.grass,
+.sky,
+.road {
+  position: relative;
+}
+
+.sky {
+  height: 40%;
+  background: skyblue;
+}
+
+
+.road {
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+
+.lines {
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  animation-name: grass;
+  animation-iteration-count: infinite;
+
+}
+
+.grass {
+  height: 30%;
+  width: 300%;
+  background: linear-gradient(to right, rgb(1, 92, 1), rgb(10, 187, 10), rgb(1, 92, 1), rgb(10, 187, 10));
+  /* animation-name: grass;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite; */
+
+}
+
+.mario {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  animation-name: mario;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: -0.5s;
+}
+
+.mario2 {
+  position: absolute;
+  right: 0px;
+
+  bottom: 60px;
+  transform: rotateY(180deg);
+  animation-name: luigi;
+  animation-duration: 8s;
+  z-index: 0;
+  animation-iteration-count: infinite;
+  animation-delay: -2s;
+  animation-timing-function: ease-out;
+}
+
+.cloud {
+  position: absolute;
+  top: 0;
+  animation-name: cloud;
+  animation-timing-function: linear;
+  animation-duration: 8s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.cloud:nth-child(1) {
+  left: 80%;
+  top: 10%;
+  transform: translateX(-50%) ;
+  animation-delay: 0;
+  animation-timing-function: cubic-bezier(.33, .01, .68, .9);
+}
+
+.cloud:nth-child(2) {
+  left: 25%;
+  bottom: 50px;
+  transform: scale(1, 0.4);
+  animation-delay: 0.6;
+  animation-timing-function: cubic-bezier(.25, .46, .45, .94);
+}
+
+.cloud:nth-child(3) {
+  top: 50px;
+  left: 10%;
+  transform: translateX(-30%) scale(1, 0.2);
+  animation-delay: 0.9;
+  animation-timing-function: cubic-bezier(.4, 0, .2, 1.6);
+}
+
+.luigi {
+  position: absolute;
+  transform: rotateY(180deg);
+  top: 50px;
+  right: 0;
+  animation-name: luigi;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  z-index: 1;
+  animation-timing-function: linear;
+}
+
+/*// ELEMENTS TO ANIMATE //*/
+@keyframes grass {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-500px);
+  }
+}
+
+@keyframes mario {
+  from {
+    transform: translateX(-100vw);
+  }
+
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+
+@keyframes luigi {
+  from {
+    transform: rotateY(180deg) translateX(-100vw);
+  }
+
+  to {
+    transform: rotateY(180deg) translateX(100vw);
+  }
+}
+
+@keyframes cloud {
+  from {
+    transform: scale(1, 0.3) translate(100vw);
+  }
+
+  to {
+    transform: scale(1, 0.6) translate(-100vw);
+  }
+}
+
+
+/*// KEYFRAMES //*/
